@@ -1,0 +1,44 @@
+#application
+spring:
+  application:
+    name: eureka
+
+   
+
+#server setting
+server:
+  port: 8761
+
+ 
+
+#eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+   
+
+#logging
+logging:
+  file: /MMO/logs/eureka/mms.log
+  level:
+    root: INFO
+    com.ch.myr: INFO
+    org.springframework.web: INFO   
+
+ 
+
+#enable showdown service by http and disable shutdown validation
+endpoints:
+  shutdown:
+      enabled: true
+      sensitive: true
+    
+ 
+
+#management endpoint path and endpoint allow ip
+management:
+  context-path: /manage
+  address: 127.0.0.1
+  port: 28761 
